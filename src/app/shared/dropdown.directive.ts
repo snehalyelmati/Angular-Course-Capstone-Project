@@ -1,11 +1,7 @@
-
-
-
 /****************************************
-DID NOT USE THIS DIRECTIVE, INCOMPLETE
+ DID NOT USE THIS DIRECTIVE, INCOMPLETE
  OR NOT SUITABLE FOR THIS IMPLEMENTATION
-****************************************/
-
+ ****************************************/
 
 
 import {Directive, ElementRef, HostListener, Renderer2} from '@angular/core';
