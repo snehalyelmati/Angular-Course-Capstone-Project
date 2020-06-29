@@ -1,14 +1,11 @@
 <div class="container d-flex flex-wrap">
   <div class="flex-row col-12">
-    <app-header></app-header>
+    <app-header (route)="onRouteChange($event)"></app-header>
   </div>
 
   <div class="flex-row col-12">
-    <app-recipes></app-recipes>
-  </div>
-
-  <div class="flex-row col-12">
+    <app-recipes *ngIf="currentRoute === 'recipes'"></app-recipes>
     <hr>
-    <app-shopping-list></app-shopping-list>
+    <app-shopping-list *ngIf="currentRoute === 'shopping-list'"></app-shopping-list>
   </div>
 </div>

@@ -7,4 +7,9 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'CapstoneProject';
+  currentRoute = 'recipes'; // available options: recipes or shopping-list
+
+  onRouteChange(route: string) {
+    this.currentRoute = route;
+  }
 }
