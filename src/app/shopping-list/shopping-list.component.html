@@ -1,7 +1,18 @@
-<div class="d-flex">
-  <div class="flex-column col-10">
-    <app-shopping-list-edit></app-shopping-list-edit>
-    <hr>
-    <p>Shopping List placeholder.</p>
+<div class="d-flex flex-column justify-content-center">
+  <h2 class="text-uppercase py-2">Shopping List</h2>
+  <br>
+  <app-shopping-list-edit></app-shopping-list-edit>
+  <hr>
+  <div class="d-flex flex-row col-12 justify-content-center">
+    <div class="flex-column col-8">
+      <h4 class="text-uppercase" style="text-align: center">Shopping List Items</h4>
+      <div class="list-group py-3">
+        <a *ngFor="let ingredient of ingredients"
+           class="list-group-item d-flex justify-content-between align-items-center" href="#">
+          {{ ingredient.name }}
+          <span class="badge badge-primary badge-pill">{{ ingredient.amount }}</span>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
