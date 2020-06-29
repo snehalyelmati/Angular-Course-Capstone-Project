@@ -2,13 +2,13 @@
   <a class="navbar-brand" href="#">RECIPE BOOK</a>
 
   <ul class="navbar-nav">
-    <li class="nav-item"><a href="#" class="nav-link" (click)="onRouteChange('recipes')">RECIPES</a></li>
-    <li class="nav-item"><a href="#" class="nav-link" (click)="onRouteChange('shopping-list')">SHOPPING LIST</a></li>
-    <li class="nav-item dropdown">
-      <a href="#" class="nav-link dropdown-toggle" role="button">MANAGE</a>
-      <div class="dropdown-menu">
-        <a href="#" class="dropdown-item">Save Data</a>
-        <a href="#" class="dropdown-item">Fetch Data</a>
+    <li class="nav-item"><a (click)="onRouteChange('recipes')" class="nav-link" href="#">RECIPES</a></li>
+    <li class="nav-item"><a (click)="onRouteChange('shopping-list')" class="nav-link" href="#">SHOPPING LIST</a></li>
+    <li class="nav-item dropdown" (click)="toggle=!toggle">
+      <a class="nav-link dropdown-toggle" href="#" role="button">MANAGE</a>
+      <div class="dropdown-menu" [ngClass]="{show:toggle}">
+        <a class="dropdown-item" href="#">Save Data</a>
+        <a class="dropdown-item" href="#">Fetch Data</a>
       </div>
     </li>
   </ul>

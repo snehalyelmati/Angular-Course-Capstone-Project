@@ -7,9 +7,9 @@
 
   <div class="flex-row clearfix col-12 pt-4">
     <h3 class="float-left text-uppercase">{{ recipeSelected.name }}</h3>
-    <div class="dropdown float-right">
+    <div class="dropdown float-right" (click)="toggle=!toggle">
       <a href="#" class="btn btn-primary dropdown-toggle">Manage Recipe</a>
-      <div class="dropdown-menu">
+      <div class="dropdown-menu" [ngClass]="{show:toggle}">
         <a href="#" class="dropdown-item">Add to shopping list</a>
         <a href="#" class="dropdown-item">Edit Recipe</a>
         <a href="#" class="dropdown-item">Delete Recipe</a>
