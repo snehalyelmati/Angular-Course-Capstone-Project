@@ -20,12 +20,12 @@
   <div class="flex-row col-12 py-3">
     <h5>Description:</h5>
     <p>{{ recipeSelected.description }}</p>
-    <h5>Ingredients:</h5>
-    <ul>
-      <li>One</li>
-      <li>Two</li>
-      <li>Three</li>
-      <li>Four</li>
+    <h5 class="pb-2">Ingredients:</h5>
+    <ul class="list-group">
+      <li class="list-group-item d-flex col-6 justify-content-between align-items-center" *ngFor="let ingredient of recipeSelected.ingredients">
+        {{ ingredient.name }}
+        <span class="badge badge-primary badge-pill">{{ ingredient.amount }}</span>
+      </li>
     </ul>
   </div>
 </div>
