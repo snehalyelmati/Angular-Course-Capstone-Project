@@ -1,12 +1,12 @@
 <div class="d-flex flex-wrap col-12 border rounded">
-  <div class="flex-row">
+  <div class="flex-row pt-3">
     <img
-      src="https://www.wholesomeyum.com/wp-content/uploads/2019/09/wholesomeyum-keto-chaffles-recipe-sweet-savory-5-ways-24.jpg"
+      [src]="recipeSelected.imagePath"
       alt="" class="img-fluid rounded">
   </div>
 
   <div class="flex-row clearfix col-12 pt-4">
-    <h3 class="float-left text-uppercase">Recipe Name</h3>
+    <h3 class="float-left text-uppercase">{{ recipeSelected.name }}</h3>
     <div class="dropdown float-right">
       <a href="#" class="btn btn-primary dropdown-toggle">Manage Recipe</a>
       <div class="dropdown-menu">
@@ -19,7 +19,7 @@
 
   <div class="flex-row col-12 py-3">
     <h5>Description:</h5>
-    <p>This is some dummy description.</p>
+    <p>{{ recipeSelected.description }}</p>
     <h5>Ingredients:</h5>
     <ul>
       <li>One</li>

@@ -1,9 +1,12 @@
 <div class="d-flex pt-3">
   <div class="flex-column col-5">
-    <app-recipe-list></app-recipe-list>
+    <app-recipe-list (recipeSelected)="onRecipeSelection($event)"></app-recipe-list>
   </div>
 
   <div class="flex-column col-7">
-    <app-recipe-detail></app-recipe-detail>
+    <app-recipe-detail *ngIf="recipe; else infoText" [recipeSelected]="recipe"></app-recipe-detail>
+    <ng-template #infoText>
+      <p>Please select a recipe...</p>
+    </ng-template>
   </div>
 </div>

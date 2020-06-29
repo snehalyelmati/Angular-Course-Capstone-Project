@@ -5,6 +5,6 @@
   </div>
 
   <div class="flex-row card-deck rounded">
-    <app-recipe-list-item class="list-group-item" *ngFor="let recipe of recipes" [recipe]="recipe"></app-recipe-list-item>
+    <app-recipe-list-item class="list-group-item" *ngFor="let recipe of recipes" [recipe]="recipe" (recipeSelected)="onRecipeSelection($event)"></app-recipe-list-item>
   </div>
 </div>

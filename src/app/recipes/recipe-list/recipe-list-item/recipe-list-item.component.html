@@ -1,12 +1,12 @@
 <div class="flex-row clearfix">
-  <a href="#">
+  <a (click)="onRecipeSelection()">
     <div class="float-left col-8">
       <h5 class="card-title">{{ recipe.name }}</h5>
       <p class="card-text">{{ recipe.description }}</p>
     </div>
 
     <div class="float-right col-4">
-      <img src="{{ recipe.imagePath }}" alt="{{ recipe.name }}" class="embed-responsive">
+      <img src="{{ recipe.imagePath }}" alt="{{ recipe.name }}" class="embed-responsive rounded border">
     </div>
   </a>
 </div>
