@@ -10,7 +10,7 @@
     <div class="dropdown float-right" (click)="toggle=!toggle">
       <a href="#" class="btn btn-primary dropdown-toggle">Manage Recipe</a>
       <div class="dropdown-menu" [ngClass]="{show:toggle}">
-        <a href="#" class="dropdown-item">Add to shopping list</a>
+        <a href="#" class="dropdown-item" (click)="onAddToShoppingList()">Add to shopping list</a>
         <a href="#" class="dropdown-item">Edit Recipe</a>
         <a href="#" class="dropdown-item">Delete Recipe</a>
       </div>
@@ -22,7 +22,8 @@
     <p>{{ recipeSelected.description }}</p>
     <h5 class="pb-2">Ingredients:</h5>
     <ul class="list-group">
-      <li class="list-group-item d-flex col-6 justify-content-between align-items-center" *ngFor="let ingredient of recipeSelected.ingredients">
+      <li class="list-group-item d-flex col-6 justify-content-between align-items-center"
+          *ngFor="let ingredient of recipeSelected.ingredients">
         {{ ingredient.name }}
         <span class="badge badge-primary badge-pill">{{ ingredient.amount }}</span>
       </li>

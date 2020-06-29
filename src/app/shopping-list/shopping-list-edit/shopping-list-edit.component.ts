@@ -1,5 +1,4 @@
-import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
-import {Ingredient} from '../../shared/ingredient.model';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ShoppingListService} from '../shopping-list.service';
 
 @Component({
