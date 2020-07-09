@@ -1,5 +1,6 @@
 a {
   font-size: medium;
+  cursor: pointer;
 }
 
 a.navbar-brand {
