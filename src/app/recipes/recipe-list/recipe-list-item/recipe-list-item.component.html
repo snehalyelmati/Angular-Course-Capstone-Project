@@ -1,12 +1,12 @@
-<div class="flex-row clearfix">
-  <a [routerLink]="[index]">
+<div class="flex-row p-1">
+  <a [routerLink]="[index]" class="clearfix rounded list-group-item" routerLinkActive="active">
     <div class="float-left col-8">
       <h5 class="card-title">{{ recipe.name }}</h5>
       <p class="card-text">{{ recipe.description }}</p>
     </div>
 
     <div class="float-right col-4">
-      <img src="{{ recipe.imagePath }}" alt="{{ recipe.name }}" class="embed-responsive rounded border">
+      <img alt="{{ recipe.name }}" class="embed-responsive rounded border" src="{{ recipe.imagePath }}">
     </div>
   </a>
 </div>

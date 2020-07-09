@@ -4,8 +4,8 @@
     <button class="btn btn-success float-right">New Recipe</button>
   </div>
 
-  <div class="flex-row card-deck rounded">
+  <div class="flex-row card-deck">
     <app-recipe-list-item *ngFor="let recipe of recipes; let i = index" [index]="i"
-                          [recipe]="recipe" class="list-group-item"></app-recipe-list-item>
+                          [recipe]="recipe"></app-recipe-list-item>
   </div>
 </div>
