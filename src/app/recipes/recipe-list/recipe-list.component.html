@@ -5,7 +5,7 @@
   </div>
 
   <div class="flex-row card-deck rounded">
-    <app-recipe-list-item class="list-group-item" *ngFor="let recipe of recipes"
-                          [recipe]="recipe"></app-recipe-list-item>
+    <app-recipe-list-item *ngFor="let recipe of recipes; let i = index" [index]="i"
+                          [recipe]="recipe" class="list-group-item"></app-recipe-list-item>
   </div>
 </div>

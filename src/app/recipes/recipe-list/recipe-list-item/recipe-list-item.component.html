@@ -1,5 +1,5 @@
 <div class="flex-row clearfix">
-  <a (click)="onRecipeSelection()">
+  <a [routerLink]="[index]">
     <div class="float-left col-8">
       <h5 class="card-title">{{ recipe.name }}</h5>
       <p class="card-text">{{ recipe.description }}</p>
