@@ -18,8 +18,6 @@ export class RecipeListItemComponent implements OnInit {
   }
 
   onRecipeSelection() {
-    // navigate to the /id of the recipe
-    // this.recipesService.recipeSelector.emit(this.recipe);
     this.router.navigate(['/recipes', this.recipe.id]);
   }
 }
