@@ -1,10 +1,7 @@
 import {Recipe} from './recipe.model';
-import {EventEmitter} from '@angular/core';
 import {Ingredient} from '../shared/ingredient.model';
 
 export class RecipesService {
-  recipeSelector = new EventEmitter<Recipe>();
-
   private recipes: Recipe[] = [
     new Recipe('Recipe One', 'This is the description for recipe one.', 'https://www.wholesomeyum.com/wp-content/uploads/2019/09/wholesomeyum-keto-chaffles-recipe-sweet-savory-5-ways-24.jpg', [
       new Ingredient('Ingredient One', 1)
