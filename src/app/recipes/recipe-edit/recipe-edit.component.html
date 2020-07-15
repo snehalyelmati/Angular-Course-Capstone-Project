@@ -1,3 +1,67 @@
-<h3 *ngIf="allowEdit">Edit Recipe: {{ id + 1 }}</h3>
+<div class="container">
+  <h3 *ngIf="!allowEdit" class="text-uppercase" style="text-align: center;">New Recipe</h3>
+  <h3 *ngIf="allowEdit" class="text-uppercase" style="text-align: center;">Edit Recipe</h3>
 
-<h3 *ngIf="!allowEdit">New Recipe:</h3>
+  <form (ngSubmit)="onSubmit()" [formGroup]="recipeForm">
+    <div class="d-flex justify-content-center flex-wrap flex-row mt-3">
+      <div class="flex-column col-12 clearfix mx-5">
+        <button (click)="onCancel()" class="btn btn-danger float-left" type="button">Cancel</button>
+        <button [disabled]="!recipeForm.valid" class="btn btn-success float-right" type="submit">Save</button>
+      </div>
+    </div>
+    <div class="flex-row mt-3">
+      <div class="flex-column col-12">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input class="form-control" formControlName="name" id="name" type="text">
+        </div>
+      </div>
+    </div>
+    <div class="flex-row">
+      <div class="flex-column col-12">
+        <div class="form-group">
+          <label for="imagePath">Image URL</label>
+          <input #imagePath class="form-control" formControlName="imagePath" id="imagePath" type="text">
+        </div>
+      </div>
+    </div>
+    <div class="flex-row">
+      <div class="flex-column col-12">
+        <!--        <img alt="recipe preview" class="img-fluid" [src]="recipeForm.value.imagePath">-->
+        <img [src]="imagePath.value" alt="recipe preview" class="img-fluid">
+      </div>
+    </div>
+    <div class="flex-row mt-2">
+      <div class="flex-column col-12">
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" formControlName="description" id="description" rows="6"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="flex-row">
+      <div class="flex-column col-12" formArrayName="ingredients" id="ingredients">
+        <div *ngFor="let ingredientCtrl of recipeForm.get('ingredients')['controls']; let i=index"
+             [formGroupName]="i" class="d-flex flex-row py-1">
+          <div class="flex-column col-8">
+            <input class="form-control" formControlName="name" type="text">
+          </div>
+          <div class="flex-column col-2">
+            <input class="form-control" formControlName="amount" type="number">
+          </div>
+          <div class="flex-column col-2">
+            <button (click)="onDeleteIngredient(i)" class="btn btn-danger rounded"
+                    style="padding: 0.125em 0.25em; margin-top: 5px;" type="button">
+              x
+            </button>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-column col-12 clearfix">
+            <button (click)="onAddIngredient()" class="btn btn-success mt-1" type="button">Add ingredient</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
