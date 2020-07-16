@@ -8,8 +8,8 @@
     <li class="nav-item dropdown" (click)="toggle=!toggle">
       <a class="nav-link dropdown-toggle" role="button">MANAGE</a>
       <div class="dropdown-menu" [ngClass]="{show:toggle}">
-        <a class="dropdown-item">Save Data</a>
-        <a class="dropdown-item">Fetch Data</a>
+        <a class="dropdown-item" (click)="onSaveData()">Save Data</a>
+        <a class="dropdown-item" (click)="onFetchData()">Fetch Data</a>
       </div>
     </li>
   </ul>
