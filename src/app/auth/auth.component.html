@@ -1,10 +1,14 @@
 <div class="flex-row d-flex justify-content-center">
   <div class="flex-column col-8">
-    <div class="alert alert-danger" *ngIf="error">
-      <p>{{ error }}</p>
-      <button class="btn btn-danger" (click)="error = null">Close</button>
-    </div>
-    <div style="text-align: center" *ngIf="isLoading">
+    <!--    <div class="alert alert-danger" *ngIf="error">-->
+    <!--      <p>{{ error }}</p>-->
+    <!--      <button class="btn btn-danger" (click)="error = null">Close</button>-->
+    <!--    </div>-->
+    <!--    <div *ngIf="error">-->
+    <!--      <app-alert (close)="onCloseErrorDialog()" [message]="error"></app-alert>-->
+    <!--    </div>-->
+    <ng-template appPlaceholder></ng-template>
+    <div *ngIf="isLoading" style="text-align: center">
       <app-loading-spinner></app-loading-spinner>
     </div>
     <form #f="ngForm" (ngSubmit)="onSubmit(f)" *ngIf="!isLoading">
