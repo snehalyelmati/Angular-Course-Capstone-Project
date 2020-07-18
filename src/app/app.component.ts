@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from './auth/auth.service';
+import * as fromApp from './store/app.reducer';
+import {Store} from '@ngrx/store';
+import * as AuthActions from './auth/store/auth.actions';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +11,10 @@ import {AuthService} from './auth/auth.service';
 export class AppComponent implements OnInit {
   title = 'CapstoneProject';
 
-  constructor(private auth: AuthService) {
+  constructor(private store: Store<fromApp.AppState>) {
   }
 
   ngOnInit() {
-    this.auth.autoLogin();
+    this.store.dispatch(new AuthActions.AutoLogin());
   }
 }

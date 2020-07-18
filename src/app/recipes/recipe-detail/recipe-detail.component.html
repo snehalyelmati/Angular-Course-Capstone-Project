@@ -7,12 +7,12 @@
 
   <div class="flex-row clearfix col-12 pt-4">
     <h3 class="float-left text-uppercase">{{ recipeSelected.name }}</h3>
-    <div class="dropdown float-right" (click)="toggle=!toggle">
+    <div (click)="toggle=!toggle" class="dropdown float-right">
       <a class="btn btn-primary text-white dropdown-toggle">Manage Recipe</a>
-      <div class="dropdown-menu" [ngClass]="{show:toggle}">
-        <a class="dropdown-item" (click)="onAddToShoppingList()">Add to shopping list</a>
-        <a class="dropdown-item" (click)="onEditRecipe()">Edit Recipe</a>
-        <a class="dropdown-item" (click)="onDeleteRecipe()">Delete Recipe</a>
+      <div [ngClass]="{show:toggle}" class="dropdown-menu">
+        <a (click)="onAddToShoppingList()" class="dropdown-item">Add to shopping list</a>
+        <a (click)="onEditRecipe()" class="dropdown-item">Edit Recipe</a>
+        <a (click)="onDeleteRecipe()" class="dropdown-item">Delete Recipe</a>
       </div>
     </div>
   </div>
@@ -22,8 +22,8 @@
     <p>{{ recipeSelected.description }}</p>
     <h5 class="pb-2">Ingredients:</h5>
     <ul class="list-group">
-      <li class="list-group-item d-flex col-6 justify-content-between align-items-center"
-          *ngFor="let ingredient of recipeSelected.ingredients">
+      <li *ngFor="let ingredient of recipeSelected.ingredients"
+          class="list-group-item d-flex col-6 justify-content-between align-items-center">
         {{ ingredient.name }}
         <span class="badge badge-primary badge-pill">{{ ingredient.amount }}</span>
       </li>

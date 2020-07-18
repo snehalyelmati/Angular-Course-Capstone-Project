@@ -1,7 +1,7 @@
-<div class="backdrop" (click)="onCloseError()"></div>
+<div (click)="onCloseError()" class="backdrop"></div>
 <div class="alert-box">
   <p>{{ message }}</p>
   <div class="alert-box-actions">
-    <button class="btn btn-primary" (click)="onCloseError()">Close</button>
+    <button (click)="onCloseError()" class="btn btn-primary">Close</button>
   </div>
 </div>
