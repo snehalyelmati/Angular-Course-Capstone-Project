@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import * as fromApp from './store/app.reducer';
 import {Store} from '@ngrx/store';
 import * as AuthActions from './auth/store/auth.actions';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,10 @@ import * as AuthActions from './auth/store/auth.actions';
 export class AppComponent implements OnInit {
   title = 'CapstoneProject';
 
-  constructor(private store: Store<fromApp.AppState>) {
+  constructor(@Inject(PLATFORM_ID) private _platformId: Object, private store: Store<fromApp.AppState>) {
+    if (isPlatformBrowser(this._platformId)) {
+
+    }
   }
 
   ngOnInit() {
